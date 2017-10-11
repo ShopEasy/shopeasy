@@ -1,6 +1,4 @@
 
-
-
 - ### Laravel ShopEasy 致力于创造更加易于扩展开发, 以开源社区驱动的移动支付电商框架
 
     Laravel ShopEasy is a free open source ecommerce platform for online merchants. 
