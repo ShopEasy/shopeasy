@@ -1,9 +1,10 @@
 <?php
 
 return array (
-  'name' => 'shopeasy/modules-dev',
+  'name' => 'shopeasy/modules',
   'license' => 'MIT',
-  'version' => 'v1.0.1.5',
+  'description' => '',
+  'version' => 'v1.0.5',
   'require' => 
   array (
     'shopeasy/base' => '~2.0',
@@ -22,18 +23,9 @@ return array (
     'oomphinc/composer-installers-extender' => '^1.0',
     'cloudshop/composer-merge-plugin' => '~1.0',
     'johnpbloch/wordpress-core' => '4.7.*',
+    'cartalyst/sentinel' => '~2.0',
     'divido/divido-php' => '>=1.1.1',
     'klarna/kco_rest' => '^2.2',
-    'cartalyst/sentinel' => '~2.0',
-  ),
-  'replace' => 
-  array (
-    'shopeasy/modules' => '*',
-  ),
-  'config' => 
-  array (
-    'sort-packages' => true,
-    'optimize-autoloader' => true,
   ),
   'minimum-stability' => 'dev',
   'prefer-stable' => true,

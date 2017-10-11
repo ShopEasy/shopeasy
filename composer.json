@@ -11,7 +11,6 @@
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.4",
-        "shopeasy/modules-dev": "~2.0",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "league/commonmark": "^0.15.4",
@@ -30,7 +29,8 @@
     },
     "scripts": {
         "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('docs/.env.example', '.env');\""
+            "@php -r \"file_exists('.env') || copy('docs/.env.example', '.env');\"",
+            "@php -r \"file_exists('storage/app/packages/modules/composer.json') || copy('storage/app/packages/modules/composer-stable.json', 'storage/app/packages/modules/composer.json');\""
         ],
         "post-autoload-dump": [
             "@php artisan package:discover"
@@ -54,9 +54,8 @@
             "merge-scripts": true,
             "merge-extra-deep": true
         },
-        "installer-types": ["wordpress-core", "shopeasy-module", "project", "shopeasy-package"],
+        "installer-types": ["wordpress-core", "shopeasy-module", "project"],
         "installer-paths": {
-            "storage/app/packages/{$name}/": ["type:shopeasy-package"],
             "app/framework/laravel": ["laravel/laravel"],
             "public/app/": ["type:wordpress-core"],
             "app/{$name}/": ["type:shopeasy-module"]
