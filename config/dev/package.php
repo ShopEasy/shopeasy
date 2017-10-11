@@ -1,17 +1,17 @@
 <?php
 
 return array (
-  'name' => 'ecstore/framework',
+  'name' => 'shopeasy/modules-dev',
   'license' => 'MIT',
   'version' => 'v1.0.1.5',
   'require' => 
   array (
-    'ecstore/base' => '~2.0',
-    'ecstore/dev' => '~2.0',
-    'ecstore/admin' => '~2.0',
-    'ecstore/install' => '~2.0',
-    'ecstore/home' => '~2.0',
-    'ecstore/bootstrap' => '~2.0',
+    'shopeasy/base' => '~2.0',
+    'shopeasy/dev' => '~2.0',
+    'shopeasy/admin' => '~2.0',
+    'shopeasy/install' => '~2.0',
+    'shopeasy/home' => '~2.0',
+    'shopeasy/bootstrap' => '~2.0',
     'zoujingli/wechat-php-sdk' => '>=1.3.10',
     'cardinity/cardinity-sdk-php' => '^1.0',
     'barryvdh/laravel-ide-helper' => '~2.4',
@@ -26,6 +26,10 @@ return array (
     'klarna/kco_rest' => '^2.2',
     'cartalyst/sentinel' => '~2.0',
   ),
+  'replace' => 
+  array (
+    'shopeasy/modules' => '*',
+  ),
   'config' => 
   array (
     'sort-packages' => true,
@@ -33,5 +37,4 @@ return array (
   ),
   'minimum-stability' => 'dev',
   'prefer-stable' => true,
-)
-;
+);
