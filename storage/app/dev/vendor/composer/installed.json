@@ -1,0 +1,19 @@
+[
+    {
+        "name": "shopeasy/modules-dev",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://git.shopes.cn/shopeasy/modules-dev.git",
+            "reference": "79dce18f1fafeadcb8d970b6c7da225de8470dd1"
+        },
+        "time": "2017-10-11T18:58:04+00:00",
+        "type": "shopeasy-package",
+        "installation-source": "source",
+        "notification-url": "https://packagist.shopes.cn/downloads/",
+        "license": [
+            "MIT"
+        ]
+    }
+]

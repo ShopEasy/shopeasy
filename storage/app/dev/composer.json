@@ -1,0 +1,12 @@
+{
+
+    "repositories": {
+        "shopes": {
+            "type": "composer",
+            "url": "https://packagist.shopes.cn"
+        }
+    },
+    "require": {
+        "shopeasy/modules-dev": "dev-master"
+    }
+}
