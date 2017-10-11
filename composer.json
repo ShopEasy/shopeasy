@@ -1,13 +1,13 @@
 {
-    "name": "ecstore/pro",
+    "name": "shopeasy/shopeasy",
     "type": "project",
-    "description": "ECStore Pro - Laravel 微信网店微服务框架",
-    "keywords": ["laravel", "ecstore-pro", "ecommerce", "framework", "opensource"],
+    "description": "Laravel ShopEasy - 微信网店 CRM 解决方案",
+    "keywords": ["laravel", "shopeasy", "ecommerce", "framework", "opensource"],
     "homepage": "https://club.shopes.cn",
     "license": "GPL-3.0+",
     "require": {
         "php": ">=7.0",
-        "ecstore/framework": "~1.0"
+        "shopeasy/modules": "~1.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.4",
@@ -30,7 +30,7 @@
     "scripts": {
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('docs/.env.example', '.env');\"",
-            "@php -r \"file_exists('storage/app/packages/framework/composer-stable.json') || copy('storage/app/packages/framework/composer-stable.json', 'storage/app/packages/framework/composer.json');\""
+            "@php -r \"file_exists('storage/app/packages/modules/composer-stable.json') || copy('storage/app/packages/modules/composer-stable.json', 'storage/app/packages/modules/composer.json');\""
         ],
         "post-autoload-dump": [
             "@php artisan package:discover"
@@ -54,11 +54,11 @@
             "merge-scripts": true,
             "merge-extra-deep": true
         },
-        "installer-types": ["wordpress-core", "ecstore-module", "project"],
+        "installer-types": ["wordpress-core", "shopeasy-module", "project"],
         "installer-paths": {
             "app/framework/laravel": ["laravel/laravel"],
             "public/app/": ["type:wordpress-core"],
-            "app/{$name}/": ["type:ecstore-module"]
+            "app/{$name}/": ["type:shopeasy-module"]
         },
         "branch-alias": {
             "dev-master": "2.0-dev"

@@ -1,15 +1,19 @@
 
-- ECStore Pro 致力于创造更加易于扩展开发, 以开源社区驱动的移动支付电商框架
 
-    ECStore Pro is a free open source ecommerce platform for online merchants. 
-    ECStore Pro provides a professional and reliable foundation from which to build a successful online store.
 
-- ECStore Pro 基于以下开源程序集成:
+- ### Laravel ShopEasy 致力于创造更加易于扩展开发, 以开源社区驱动的移动支付电商框架
+
+    Laravel ShopEasy is a free open source ecommerce platform for online merchants. 
+    Laravel ShopEasy provides a professional and reliable foundation from which to build a successful online store.
+
+- Laravel ShopEasy 基于以下开源程序集成:
 
     * Laravel 5.5
     * Wordpress 4.7
     * 好商城 V5
     * 微擎 WeEngine
+
+
 
 
 ## 环境依赖
@@ -25,18 +29,18 @@
 
 1. 安装需要配置域名(VirtualHost), 将网站根目录设置为 **`public/`** 目录, 例如 Apache 的配置(假设站点主目录为 `D:\www\` ):
 
-    ‼️必须安装在 **域名根目录** 下, 不能在某个网站子目录下(比如: `http://localhost/ecstore`) 否则会路径出错
+    ‼️必须安装在 **域名根目录** 下, 不能在某个网站子目录下(比如: `http://localhost/shopeasy`) 否则会路径出错
 
         <VirtualHost *:80>
-             DocumentRoot "D:/www/ecstore.dev/public"
-             ServerName ecstore.dev
+             DocumentRoot "D:/www/shopeasy.dev/public"
+             ServerName shopeasy.dev
         </VirtualHost>
 
     请自行配置好 `Composer` 执行环境, 命令行窗口进入 `D:\www\` 目录执行安装:
 
-        composer create-project ecstore/pro ecstore.dev
+        composer create-project shopeasy/shopeasy shopeasy.dev
     
-    即可将 ECStore Pro 安装到 `ecstore.dev` 目录下, 如果执行时间很长, 可能是你没有配置 Composer 国内镜像, 请在上面的安装命令执行前先执行
+    即可将 Laravel ShopEasy 安装到 `shopeasy.dev` 目录下, 如果执行时间很长, 可能是你没有配置 Composer 国内镜像, 请在上面的安装命令执行前先执行
 
         composer config -g repo.packagist composer https://packagist.phpcomposer.com
 
@@ -44,7 +48,7 @@
     
 
 
-2. 等待 Composer 代码下载完毕后, 用浏览器访问网站域名(比如: http://ecstore.dev/ ),
+2. 等待 Composer 代码下载完毕后, 用浏览器访问网站域名(比如: http://shopeasy.dev/ ),
     正常情况下会进入安装向导页面, 填写数据库参数和管理员账号信息(需要先用 phpmyadmin, navicat 等工具创建好数据库)完成安装
 
 3. Apache 服务器需要开启 mod_rewrite 伪静态扩展, Nginx 伪静态规则配置请参考 Laravel Nginx 伪静态设置    
@@ -90,10 +94,9 @@
 
 ## Links
 
-- [点这里加入开发群: 665863675﹝ECStore Pro﹞](https://jq.qq.com/?_wv=1027&k=5qYJy7I)
-- [发布页面 Github](https://ecstore.github.io/Pro/)
-- [问题反馈 Issues](https://github.com/ECStore/Pro/issues)
-- [文档 Documents](https://github.com/ECStore/Pro/wiki)
-- [提交PR (Pull Request)](https://github.com/ECStore/Pro/pulls)
+- [点这里加入开发群: 665863675﹝Laravel ShopEasy﹞](https://jq.qq.com/?_wv=1027&k=5qYJy7I)
+- [安装指南](https://shopeasy.github.io/shopeasy/)
+- [问题反馈 Issues](https://github.com/shopeasy/shopeasy/issues)
+- [开发文档 Documents](https://github.com/shopeasy/shopeasy/wiki)
 - [开发者社区 club.shopes.cn](https://club.shopes.cn)
 
