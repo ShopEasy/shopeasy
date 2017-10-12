@@ -1,12 +1,90 @@
-
-# BEGIN WordPress
 <IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    RewriteBase /
+
+#    RewriteCond %{REQUEST_FILENAME}/index.php -f
+#    RewriteRule ^ %{REQUEST_FILENAME}/index.php [L]
+#    #
+#    RewriteCond %{REQUEST_FILENAME}/index.html -f
+#    RewriteRule ^ %{REQUEST_FILENAME}/index.html [L]
+
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d [OR]
+    RewriteCond %{REQUEST_FILENAME} \.(png|jpe?g|gif|css|js|ico)$ [OR]
+    RewriteCond %{REQUEST_FILENAME} ^data/
+    RewriteRule ^ - [L]
+
+    RewriteRule ^index\.php$ - [L]
+    RewriteRule ^(.*/)index\.php $1 [R=307,QSA,L]
+
+    RewriteRule ^admin$ admin/ [R=301,L]
+    # add a trailing slash to /wp-admin
+    RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
+    # Handle Front Controller...
+    RewriteRule ^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*)$ /app/$2 [L]
+    RewriteRule ^([_0-9a-zA-Z-]+/)?((wp-.*|xmlrpc)\.php)$ /app/$2 [L]
+
+
+
+
+    #apache ,iis 伪静态规则
+    #RewriteRule ^index.php$ shop
+    RewriteRule ^category.html$ index.php?act=category&op=index
+    RewriteRule ^([0-9]+).html$ index.php?act=goods&goods_id=$1
+    RewriteRule ^category.html$ index.php?act=category&act=index
+    RewriteRule ^shop_view-(\d+)-(\d+)-([0-5])-([0-2])-(\d+).html$ index.php?act=show_store&op=goods_all&store_id=$1&stc_id=$2&key=3&order=$4&curpage=$5
+    RewriteRule ^article-([0-9]+).html$ index.php?act=article&article_id=$1
+    RewriteRule ^article_cate-([0-9]+).html$ index.php?act=article&op=article&ac_id=$1
+    RewriteRule ^document-([a-zA-Z_]+).html$ index.php?act=document&code=$1
+    RewriteRule ^cate-(\d+)-([0-9_]+)-([0-9_]+)-([0-3])-([0-2])-([0-1])-([0-1])-(\d+)-(\d+).html$ index.php?act=search&op=index&cate_id=$1&b_id=$2&a_id=$3&key=$4&order=$5&type=$6&gift=$7&area_id=$8&currpage=$9
+    RewriteRule ^brand-(\d+)-([0-3])-([0-2])-([0-1])-([0-1])-(\d+)-(\d+).html$ index.php?act=brand&op=list&brand=$1&key=$2&order=$3&type=$4&gift=$5&area_id=$6&currpage=$7
+    RewriteRule ^brand.html$ index.php?act=brand&op=index
+    RewriteRule ^night.html$ index.php?act=night&op=index
+    RewriteRule ^groupbuy.html$ index.php?act=show_groupbuy&op=index
+    RewriteRule ^groupbuy_detail-(\d+).html$ index.php?act=show_groupbuy&op=groupbuy_detail&group_id=$1
+    RewriteRule ^groupbuy_list-(\d+)-(\d+)-(\d+)-(\d+)-(\d+)-(\d+).html$ index.php?act=show_groupbuy&op=groupbuy_list&class=$1&s_class=$2&groupbuy_price=$3&groupbuy_order_key=$4&groupbuy_order=$5&curpage=$6
+    RewriteRule ^groupbuy_soon-(\d+)-(\d+)-(\d+)-(\d+)-(\d+)-(\d+).html$ index.php?act=show_groupbuy&op=groupbuy_soon&class=$1&s_class=$2&groupbuy_price=$3&groupbuy_order_key=$4&groupbuy_order=$5&curpage=$6
+    RewriteRule ^groupbuy_history-(\d+)-(\d+)-(\d+)-(\d+)-(\d+)-(\d+).html$ index.php?act=show_groupbuy&op=groupbuy_history&class=$1&s_class=$2&groupbuy_price=$3&groupbuy_order_key=$4&groupbuy_order=$5&curpage=$6
+    RewriteRule ^vr_groupbuy_list-(\d+)-(\d+)-(\d+)-(\d+)-(\d+)-(\d+)-(\d+)-(\d+).html$ index.php?act=show_groupbuy&op=vr_groupbuy_list&vr_class=$1&vr_s_class=$2&vr_area=$3&vr_mall=$4&groupbuy_price=$5&groupbuy_order_key=$6&groupbuy_order=$7&curpage=$8
+    RewriteRule ^vr_groupbuy_soon-(\d+)-(\d+)-(\d+)-(\d+)-(\d+)-(\d+)-(\d+)-(\d+).html$ index.php?act=show_groupbuy&op=vr_groupbuy_soon&vr_class=$1&vr_s_class=$2&vr_area=$3&vr_mall=$4&groupbuy_price=$5&groupbuy_order_key=$6&groupbuy_order=$7&curpage=$8
+    RewriteRule ^vr_groupbuy_history-(\d+)-(\d+)-(\d+)-(\d+)-(\d+)-(\d+)-(\d+)-(\d+).html$ index.php?act=show_groupbuy&op=vr_groupbuy_history&vr_class=$1&vr_s_class=$2&vr_area=$3&vr_mall=$4&groupbuy_price=$5&groupbuy_order_key=$6&groupbuy_order=$7&curpage=$8
+    RewriteRule ^integral.html$ index.php?act=pointshop&op=index
+    RewriteRule ^integral_list.html$ index.php?act=pointshop&op=plist
+    RewriteRule ^integral_item-(\d+).html$ index.php?act=pointshop&op=pinfo&id=$1
+    RewriteRule ^voucher.html$ index.php?act=pointvoucher&op=index
+    RewriteRule ^grade.html$ index.php?act=pointgrade&op=index
+    RewriteRule ^explog-(\d+).html$ index.php?act=pointgrade&op=exppointlog&currpage=$1
+    RewriteRule ^comments-(\d+)-([0-3])-(\d+).html$ index.php?act=goods&op=comments_list&goods_id=$1&type=$2&currpage=$3
+    RewriteRule ^goods-([0-9]+)(-?)([0-9]*).html$ index.php?act=goods&goods_id=$1
+    RewriteRule ^groupbuy-([0-9]+)-([0-9]+).html$ index.php?act=show_groupbuy&op=groupbuy_detail&group_id=$1&id=$2
+    RewriteRule ^store-([0-9]+).html$ index.php?act=show_store&store_id=$1
+    RewriteRule ^activity-([0-9]+)-([0-9]*).html$ index.php?act=activity&activity_id=$1&nav_id=$2
+    RewriteRule ^store_nav-([0-9]+)-([0-9]+).html$ index.php?act=show_store&store_id=$1&article=$2
+    RewriteRule ^coupon_info-([0-9]+)-([0-9]+).html$ index.php?act=coupon_store&op=detail&coupon_id=$1&id=$2
+    RewriteRule ^-([0-9]+)-([0-9]+).html$ index.php?act=show_groupbuy&op=groupbuy_detail&group_id=$1&id=$2
+    RewriteRule ^night-([a-zA-Z_]+).html$ index.php?act=night&op=night&code=$1
+    RewriteRule ^shop-(\d+).html$ index.php?act=show_store&op=index&store_id=$1
+
+    # Redirect Trailing Slashes If Not A Folder...
+    #RewriteCond %{REQUEST_FILENAME} !-d
+    # RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 </IfModule>
+# BEGIN WordPress
 
 # END WordPress
