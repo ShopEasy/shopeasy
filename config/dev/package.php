@@ -4,7 +4,7 @@ return array (
   'name' => 'shopeasy/modules',
   'license' => 'MIT',
   'description' => '',
-  'version' => 'v1.0.5',
+  'version' => 'v1.0.8.1',
   'require' => 
   array (
     'shopeasy/base' => '~2.0',
@@ -12,6 +12,13 @@ return array (
     'shopeasy/admin' => '~2.0',
     'shopeasy/install' => '~2.0',
     'shopeasy/home' => '~2.0',
+    'shopeasy/circle' => '~2.0',
+    'shopeasy/cms' => '~2.0',
+    'shopeasy/microshop' => '~2.0',
+    'shopeasy/mobile' => '~2.0',
+    'shopeasy/shop' => '~2.0',
+    'shopeasy/system' => '~2.0',
+    'laravel/laravel' => '~5.5',
     'zoujingli/wechat-php-sdk' => '>=1.3.10',
     'cardinity/cardinity-sdk-php' => '^1.0',
     'barryvdh/laravel-ide-helper' => '~2.4',
