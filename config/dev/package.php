@@ -12,7 +12,6 @@ return array (
     'shopeasy/admin' => '~2.0',
     'shopeasy/install' => '~2.0',
     'shopeasy/home' => '~2.0',
-    'shopeasy/bootstrap' => '~2.0',
     'zoujingli/wechat-php-sdk' => '>=1.3.10',
     'cardinity/cardinity-sdk-php' => '^1.0',
     'barryvdh/laravel-ide-helper' => '~2.4',
