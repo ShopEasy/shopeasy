@@ -8,10 +8,7 @@
 
     * Laravel 5.5
     * Wordpress 4.7
-    * 好商城 V5
     * 微擎 WeEngine
-
-
 
 
 ## 环境依赖
