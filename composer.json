@@ -1,7 +1,7 @@
 {
     "name": "shopeasy/shopeasy",
     "type": "project",
-    "description": "Laravel ShopEasy - 微信网店 CRM 解决方案",
+    "description": "Laravel ShopEasy - 超赞网店解决方案",
     "keywords": ["laravel", "shopeasy", "b2b2c", "crm", "ecommerce", "framework", "opensource"],
     "homepage": "https://club.shopes.cn",
     "license": "GPL-3.0+",

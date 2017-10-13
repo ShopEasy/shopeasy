@@ -1,6 +1,6 @@
 <?php
-//by 33hao.com 好商城
-$config = array();
+
+$config = [];
 $baseurl = env('APP_URL') . '/';
 $config['base_site_url'] = env('APP_URL');
 $config['shop_site_url'] = $baseurl . 'shop/';
