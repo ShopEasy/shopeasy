@@ -142,9 +142,9 @@ return [
     */
 
     'composer' => [
-        'vendor' => 'ECStore',
+        'vendor' => 'shopeasy',
         'author' => [
-            'name' => 'ECStore Pro Team',
+            'name' => 'Martek Co.',
             'email' => 'club@shopes.cn',
         ],
     ],
@@ -158,7 +158,7 @@ return [
     */
     'cache' => [
         'enabled' => false,
-        'key' => 'ecstore-modules',
+        'key' => 'modules',
         'lifetime' => 60,
     ],
     /*

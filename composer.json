@@ -10,6 +10,7 @@
         "shopeasy/modules": "~1.0"
     },
     "require-dev": {
+        "jetbrains/phpstorm-stubs":"dev-master",
         "barryvdh/laravel-ide-helper": "^2.4",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
@@ -30,7 +31,7 @@
     "scripts": {
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('docs/.env.example', '.env');\"",
-            "@php -r \"file_exists('storage/app/packages/modules/composer.json') || copy('storage/app/packages/composer-stable.json', 'storage/app/packages/modules/composer.json');\""
+            "@php -r \"file_exists('storage/app/packages/modules/composer.json') || copy('storage/app/packages/modules/composer-stable.json', 'storage/app/packages/modules/composer.json');\""
         ],
         "post-autoload-dump": [
             "@php artisan package:discover"

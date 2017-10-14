@@ -49,4 +49,5 @@ $status = $kernel->handle(
 
 $kernel->terminate($input, $status);
 
+echo PHP_EOL;
 exit($status);

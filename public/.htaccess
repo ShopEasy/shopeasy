@@ -7,11 +7,11 @@
 
     RewriteBase /
 
-#    RewriteCond %{REQUEST_FILENAME}/index.php -f
-#    RewriteRule ^ %{REQUEST_FILENAME}/index.php [L]
-#    #
-#    RewriteCond %{REQUEST_FILENAME}/index.html -f
-#    RewriteRule ^ %{REQUEST_FILENAME}/index.html [L]
+    #    RewriteCond %{REQUEST_FILENAME}/index.php -f
+    #    RewriteRule ^ %{REQUEST_FILENAME}/index.php [L]
+    #    #
+    #    RewriteCond %{REQUEST_FILENAME}/index.html -f
+    #    RewriteRule ^ %{REQUEST_FILENAME}/index.html [L]
 
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d [OR]
@@ -22,14 +22,13 @@
     RewriteRule ^index\.php$ - [L]
     RewriteRule ^(.*/)index\.php $1 [R=307,QSA,L]
 
-    # RewriteRule ^admin$ admin/ [R=301,L]
     # add a trailing slash to /wp-admin
+    RewriteRule ^admin/*$ wp-admin/ [R=301,L]
     RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
+
     # Handle Front Controller...
-    RewriteRule ^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*)$ app/$2 [L]
-    RewriteRule ^([_0-9a-zA-Z-]+/)?((wp-.*|xmlrpc)\.php)$ app/$2 [L]
-
-
+    RewriteRule ^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*)$ app/$2
+    RewriteRule ^([_0-9a-zA-Z-]+/)?((wp-\w+|xmlrpc)\.php)$ app/$2
 
 
     #apache ,iis 伪静态规则
